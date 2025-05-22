@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <form method="post">
+            <label>Amount:</label>
+            <input type="number" step="any" name="amount" required>
+            <label>From Currency:</label>
+            <select name="from_currency" required>
+                {% for code in currencies %}
+                    <option value="{{ code }}" {% if request.form.get('from_currency') == code %}selected{% endif %}>{{ code }}</option>
+                {% endfor %}
+            </select>
+            <label>To Currency:</label>
+            <select name="to_currency" required>
+                {% for code in currencies %}
+                    <option value="{{ code }}" {% if request.form.get('to_currency') == code %}selected{% endif %}>{{ code }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        {% if result is not none %}
+            <div class="result">
+                {{ request.form['amount'] }} {{ request.form['from_currency'].upper() }} = {{ "%.2f"|format(result) }} {{ request.form['to_currency'].upper() }}
+            </div>
+        {% endif %}
+        {% if error %}
+            <div class="error">
+                Error: {{ error }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

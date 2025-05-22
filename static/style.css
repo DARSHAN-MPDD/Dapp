@@ -1,0 +1,105 @@
+body {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f4f6fb 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.container {
+    background: #fff;
+    max-width: 420px;
+    margin: 60px auto 0 auto;
+    padding: 36px 32px 28px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60, 72, 88, 0.18);
+    border: 1.5px solid #e0e7ef;
+}
+h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 32px;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #334155;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    background: #f8fafc;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+input[type="number"]:focus,
+select:focus {
+    border: 1.5px solid #6366f1;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 2px #a5b4fc55;
+}
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' fill='gray' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px 18px;
+}
+button {
+    width: 100%;
+    padding: 13px 0;
+    background: linear-gradient(90deg, #6366f1 0%, #2563eb 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+button:hover {
+    background: linear-gradient(90deg, #2563eb 0%, #6366f1 100%);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.13);
+}
+.result, .error {
+    margin-top: 28px;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1.13rem;
+    text-align: center;
+    font-weight: 500;
+}
+.result {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1.5px solid #bae6fd;
+}
+.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1.5px solid #fecaca;
+}
+@media (max-width: 540px) {
+    .container {
+        padding: 18px 6px 14px 6px;
+        max-width: 98vw;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    .result, .error {
+        font-size: 1rem;
+    }
+}
