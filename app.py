@@ -23,5 +23,9 @@ def index():
             error = str(e)
     return render_template('index.html', result=result, error=error, currencies=CURRENCIES)
 
+@app.route('/video')
+def video():
+    return render_template('video.html')
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
